@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <h2 class="heading">Template Driven Form</h2>
+    <form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+   
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" 
+        [(ngModel)]="userDetails.name"
+  
+        [appMask]="userDetails.name"
+  
+  
+         required>
+      
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="userDetails.email" required email>
+     
+      </div>
+  
+      <div class="form-group">
+        <app-address></app-address>
+        
+      </div>
+  
+      <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" [(ngModel)]="userDetails.mobile" required pattern="[0-9]{10}">
+       
+      </div>
+  
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" id="age" name="age" [(ngModel)]="userDetails.age" required min="20" max="60">
+       
+      </div>
+  
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" id="gender" name="gender" [(ngModel)]="userDetails.gender" required>
+          <option value="" disabled>Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

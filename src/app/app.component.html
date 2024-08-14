@@ -1,0 +1,21 @@
+ 
+
+
+<div>
+    <button type="submit" class="btn btn-primary" (click)="register()">Register User</button>
+
+    <button type="submit" class="btn btn-primary" (click)="forgotpassword()">Forgot Password</button>
+
+    <a href="/forgotpassword" target="_blank">Forgot Password Link</a>
+
+    <a routerLink="/forgotpassword">Forgot Password routerLink Link</a>
+
+    <button type="submit" class="btn btn-primary" (click)="Login()">Login</button>
+
+    {{fullNameForChild}}
+
+    
+</div>
+
+
+<router-outlet />
